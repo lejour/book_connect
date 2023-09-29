@@ -11,6 +11,44 @@
   </head>
 
   <body>
+    <header>
+      <nav class = "navbar navbar-expand-lg navbar-light bg-light p-5 border">
+        <div class="container">
+          <div class="col-lg-3">
+            <button type="button" class="btn btn-block border"><h2><%= link_to "LOGO", root_path %></h2></button>
+          </div>
+          <div class="col-lg-1"></div>
+          <div class="col-lg-2" style="margin-top:10px">
+            <% if customer_signed_in? %>
+              <p>ようこそ、<%= current_customer.name %>さん!</p>
+            <% end %>
+          </div>
+            <div class="col-lg-6">
+              <div class="collapse navbar-collapse">
+                <ul class="navbar-nav w-100 nav-justified">
+                  <% if customer_signed_in? %>
+                    <li class="nav-item"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
+                  <% elsif admin_signed_in? %>
+                    <li class="nav-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+                  <% else %>
+                    <li class="nav-item">
+                      <button type="button" class="btn btn-light border"><%= link_to "About", about_path %></button>
+                    </li>
+                    <li class="nav-item">
+                      <button type="button" class="btn btn-light border"><%= link_to "新規登録", new_customer_registration_path %></button>
+                    </li>
+                    <li class="nav-item">
+                      <button type="button" class="btn btn-light border"><%= link_to "ログイン", new_customer_session_path %></button>
+                    </li>
+
+                  <% end %>
+                </ul>
+              </div>
+
+            </div>
+        </div>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
