@@ -6,7 +6,7 @@
     </div>
   <% end %>
   <% if @books.present? %>
-    <%= render "books/book", books: @books %>
+    <%= render "books/index", books: @books %>
   <% else %>
     検索結果は見つかりませんでした
   <% end %>
