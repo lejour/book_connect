@@ -1,13 +1,1 @@
-<div class="search-box">
-  <%= form_with url: home_path, method: :get do |f| %>
-    <div class="form-group">
-      <%= f.text_field :keyword, class: "form-control" %>
-      <%= f.submit "本の題名を検索", class: "form-control" %>
-    </div>
-  <% end %>
-  <% if @books.present? %>
-    <%= render "books/index", books: @books %>
-  <% else %>
-    検索結果は見つかりませんでした
-  <% end %>
-</div>
+ブックマーク
