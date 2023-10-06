@@ -11,4 +11,8 @@ class Public::BooksController < ApplicationController
 
   end
 
+  def create
+
+  end
+
 end
