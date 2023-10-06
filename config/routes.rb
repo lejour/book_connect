@@ -16,7 +16,8 @@ Rails.application.routes.draw do
     root to: "homes#top"
     get '/about' => 'homes#about', as: 'about'
     get '/home' => 'homes#home' , as: 'home'
-    resources :books, only: [:index, :create, :show]
+    resources :books, only: [:index, :show]
+    resources :posts, only: [:index, :show, :create, :edit, :update, :destroy]
   end
 
 end

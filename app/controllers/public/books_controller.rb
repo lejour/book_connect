@@ -8,11 +8,7 @@ class Public::BooksController < ApplicationController
 
   def show
     @book = RakutenWebService::Books::Book.search(isbn: params[:id]).first
-
-  end
-
-  def create
-
+    @post = Post.new
   end
 
 end
