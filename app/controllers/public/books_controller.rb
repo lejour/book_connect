@@ -7,6 +7,7 @@ class Public::BooksController < ApplicationController
   end
 
   def show
+    #isbnコードの一つ目を取得
     @book = RakutenWebService::Books::Book.search(isbn: params[:id]).first
     @post = Post.new
   end

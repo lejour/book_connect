@@ -1,4 +1,7 @@
-<%= image_tag(@book.medium_image_url) %>
+<%= image_tag @book.large_image_url %>
+<%= @book.title %>
+<%= @book.item_caption %>
+
 
 <%= form_with model: @post do |f| %>
   <%= f.text_area :text %>
