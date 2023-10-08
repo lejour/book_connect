@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2023_10_05_071027) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "books", force: :cascade do |t|
+  create_table "books", primary_key: "isbn", force: :cascade do |t|
     t.string "title", null: false
     t.string "author", null: false
     t.date "sales_date", null: false
