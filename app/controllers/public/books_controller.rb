@@ -11,5 +11,7 @@ class Public::BooksController < ApplicationController
     @book = RakutenWebService::Books::Book.search(isbn: params[:id]).first
     @post = Post.new
   end
+  
+  
 
 end

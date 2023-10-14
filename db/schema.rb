@@ -24,15 +24,16 @@ ActiveRecord::Schema.define(version: 2023_10_05_071027) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "books", primary_key: "isbn", force: :cascade do |t|
+  create_table "books", force: :cascade do |t|
     t.string "title", null: false
     t.string "author", null: false
-    t.date "sales_date", null: false
+    t.string "sales_date", null: false
     t.text "item_caption", null: false
-    t.string "large_image_url", null: false
-    t.string "medium_image_url", null: false
-    t.string "small_image_url", null: false
-    t.string "item_url", null: false
+    t.string "large_image_url", default: "", null: false
+    t.string "medium_image_url", default: "", null: false
+    t.string "small_image_url", default: "", null: false
+    t.string "item_url", default: "", null: false
+    t.string "isbn", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
