@@ -1,0 +1,19 @@
+<h5>マイページ</h5>
+
+    <div class="col-lg-1" style="padding:50px 0 0 0;">
+      <h5>登録情報</h5>
+    </div>
+    <div class="col-lg-2" style="padding:50px 0 0 0;">
+      <%= link_to "編集する", customers_current_customer_edit_path(@customer),class: "text-white btn btn-success", style: "padding:2px 20px 2px 20px;" %>
+    </div>
+
+        <table class="table table-bordered">
+          <tr>
+            <th>氏名</th>
+            <th><%= @customer.name %></th>
+          </tr>
+          <tr>
+            <th>メールアドレス</th>
+            <th><%= @customer.email %></th>
+          </tr>
+      </table>

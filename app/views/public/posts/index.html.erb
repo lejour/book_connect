@@ -2,13 +2,22 @@
 <% @posts.each do |post| %>
 
   <%#= image_tag post.book.large_image_url %>
-  <%= post.text %>
+  <%#= post.text %>
 
 <% end %>
 
 <% @books.each do |book| %>
 
   <%#= image_tag post.book.large_image_url %>
+  <%#= book.title %>
+
+<% end %>
+
+
+<% @books.zip(@posts) do |book, post| %>
+
   <%= book.title %>
+  <%= image_tag book.large_image_url %>
+  <%= post.text %>
 
 <% end %>

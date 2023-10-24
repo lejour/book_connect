@@ -16,6 +16,11 @@ Rails.application.routes.draw do
     root to: "homes#top"
     get '/about' => 'homes#about', as: 'about'
     get '/home' => 'homes#home' , as: 'home'
+    get '/customers/current_customer' => 'customers#show'
+    get '/customers/current_customer/edit' => 'customers#edit'
+    patch '/customers/current_customer' => 'customers#update'
+    get '/customers/confirm_withdraw' => 'customers#confirm_withdraw'
+    patch '/customers/withdraw' => 'customers#withdraw'
     resources :books, only: [:index, :show]
     resources :posts, only: [:index, :show, :create, :edit, :update, :destroy] do
       resources :comments, only: [:create]
