@@ -5,6 +5,11 @@ class Public::PostsController < ApplicationController
     @books = Book.all
   end
 
+  def show
+    @comment = Comment.new
+    @post = Post.find(params[:id])
+  end
+
   def create
 
     #登録されている本を探し、登録されていればそのIDを使用。されてい負ければbook_paramsからデータを取得

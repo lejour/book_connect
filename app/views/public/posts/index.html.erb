@@ -17,7 +17,9 @@
 <% @books.zip(@posts) do |book, post| %>
 
   <%= book.title %>
-  <%= image_tag book.large_image_url %>
+  <%= link_to post_path(post.id) do %>
+    <%= image_tag book.large_image_url %>
+  <% end %>
   <%= post.text %>
 
 <% end %>
