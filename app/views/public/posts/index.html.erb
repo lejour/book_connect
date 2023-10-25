@@ -1,25 +1,26 @@
 
-<% @posts.each do |post| %>
-
-  <%#= image_tag post.book.large_image_url %>
-  <%#= post.text %>
-
-<% end %>
-
 <% @books.each do |book| %>
 
-  <%#= image_tag post.book.large_image_url %>
   <%#= book.title %>
+  <%#= image_tag book.large_image_url %>
 
 <% end %>
 
+<% @posts.each do |post| %>
+  <%= link_to post_path(post.id) do %>
+    <%= image_tag post.book.large_image_url %>
+  <% end %>
+    <%= post.text %>
+    <p><%= link_to "#{post.comments.count} コメント", post_path(post.id) %></p>
+
+<% end %>
 
 <% @books.zip(@posts) do |book, post| %>
 
-  <%= book.title %>
-  <%= link_to post_path(post.id) do %>
-    <%= image_tag book.large_image_url %>
-  <% end %>
-  <%= post.text %>
+  <%#= book.title %>
+  <%#= link_to post_path(post.id) do %>
+    <%#= image_tag book.large_image_url %>
+  <%# end %>
+  <%#= post.text %>
 
 <% end %>
