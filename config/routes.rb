@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     patch '/customers/withdraw' => 'customers#withdraw'
     resources :books, only: [:index, :show]
     resources :posts, only: [:index, :show, :create, :edit, :update, :destroy] do
-      resources :comments, only: [:create]
+      resources :comments, only: [:create, :destroy]
     end
   end
 
