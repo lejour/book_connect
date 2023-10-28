@@ -27,4 +27,12 @@ Rails.application.routes.draw do
     end
   end
 
+  scope module: :admin do
+    get '/admin' => "homes#top", as: 'admin'
+  end
+
+  namespace :admin do
+    resources :posts, only: [:index, :show, :edit, :update, :destroy]
+  end
+
 end

@@ -59,3 +59,5 @@ gem 'devise'
 
 gem 'rakuten_web_service'
 gem 'dotenv-rails'
+
+gem 'kaminari','~> 1.2.1'

@@ -1,0 +1,39 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-1" style="padding:50px 0 0 0;">
+    </div>
+    <div class="col-lg-2" style="padding:50px 0 0 0;">
+      <h5 class="bg-light text-center">投稿履歴一覧</h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-1" style="padding:10px 0 0 0;"></div>
+    <div class="col-lg-10" style="padding:10px 0 0 0;">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="bg-light">投稿日時</th>
+            <th class="bg-light">投稿者</th>
+            <th class="bg-light">投稿本</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @posts.each do |post| %>
+          <tr>
+            <td>
+              <%= link_to admin_posts_path(post.id) do %>
+                <%= post.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+              <% end %>
+            </td>
+            <td><%= post.customer.name %></td>
+            <td><%= post.book.title %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
